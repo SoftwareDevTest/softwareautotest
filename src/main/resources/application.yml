@@ -1,0 +1,24 @@
+spring:
+#Dubbo 服务消费者配置
+  dubbo:
+    application:
+      name: autotest
+      registries[0]:
+        address: zookeeper://192.168.2.223:2181
+        timeout: 60000
+    scan: com.autotest
+#数据库配置
+ds:
+  #default
+  default:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+  #school
+  school:
+    url: jdbc:mysql://127.0.0.1:3306/school?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+    tables: student
